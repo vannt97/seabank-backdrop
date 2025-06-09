@@ -21,6 +21,10 @@ function findBgWrapperElement() {
   let element = document.querySelector(".bg-wrapper");
   return element;
 }
+function findBlockBtnsWrapperElement() {
+  let element = document.querySelector(".block-btns-wrapper");
+  return element;
+}
 function hiddenHome() {
   let element = findHomeElement();
   if (element) element.style.display = "none";
@@ -53,6 +57,7 @@ function showShareElement() {
   let element = findShareElement();
   if (element) element.style.display = "block";
 }
+
 function navigatorShareFile(
   url,
   callbackSuccess,
@@ -113,7 +118,6 @@ function downloadFileFromURL(url, fileName) {
 
 function handleShareBtn() {
   let fileName = getFileName();
-
   navigatorShareFile(
     resultUrl,
     () => {},
@@ -178,6 +182,45 @@ function uploadSingleMedia() {
       alert("Đã xảy ra lỗi khi upload!");
     });
 }
+
 function getURLFromBlob(blob) {
   return URL.createObjectURL(blob); // Tạo đường dẫn tạm
+}
+
+function showBlockBtnsElement() {
+  let element = findBlockBtnsWrapperElement();
+  if (resultType == "image") {
+    element.innerHTML = `<p style="margin-bottom: 2rem">
+            Ấn giữ vào tấm hình để tải hình về máy
+          </p>
+
+          <img
+            onclick="handleShareBtn()"
+            class="experience-btn"
+            src="assets/images/share-btn.png"
+            alt=""
+            style="margin-bottom: 2rem"
+          />
+          <p onclick="hiddenShareElement()">Quay lại</p>`;
+  }
+  if (resultType == "video") {
+    element.innerHTML = `<img
+            onclick="handleShareBtn()"
+            class="experience-btn"
+            src="assets/images/share-btn.png"
+            alt=""
+          />
+          <div class="btns-wrapper">
+            <img
+              onclick="handleSaveBtn()"
+              src="assets/images/save-btn.png"
+              alt=""
+            />
+            <img
+              onclick="hiddenShareElement()"
+              src="assets/images/back-btn.png"
+              alt=""
+            />
+          </div>`;
+  }
 }

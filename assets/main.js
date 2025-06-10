@@ -122,7 +122,7 @@ function handleShareBtn() {
     resultUrl,
     () => {},
     () => {},
-    "",
+    "#TheSeABizUltraCash",
     fileName
   );
 }

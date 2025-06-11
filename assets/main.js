@@ -279,8 +279,8 @@ function checkBrowser() {
 function handleRedirectToBrowser() {
   let current_url = new window.URL(window.location.href);
   let params = current_url.search;
-  window.location = `intent:${window.location.origin}/gallery.html${params}#Intent;end`;
-  window.location.href = `x-safari-${window.location.origin}/gallery.html${params}`;
+  window.location = `intent:${window.location.origin}${params}#Intent;end`;
+  window.location.href = `x-safari-${window.location.origin}${params}`;
 }
 
 function redirectToBrowserFromZalo() {

@@ -234,6 +234,12 @@ async function uploadSingleMedia(file, s3Url) {
 async function handleUploadPresignedS3(file) {
   let { file_key, upload_url } = await getPresignedUrl(file);
   await uploadSingleMedia(file, upload_url);
+
+  return upload_url;
+}
+
+function getUrlRaw(fullUrl) {
+  return fullUrl.split("?")[0];
 }
 
 async function base64toFile(base64, filename, mimeType = "image/png") {

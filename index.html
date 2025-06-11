@@ -442,28 +442,28 @@
       };
     </script>
     <script>
-      function receiveVideoBlob(blobVideo, containerType) {
+      async function receiveVideoBlob(blobVideo, containerType) {
         console.log(
           `receive video: ${blobVideo} witn mimeType: ${containerType}`
         );
         window.unityInstance.SendMessage("Control", "ShowButton");
         resultUrl = getURLFromBlob(blobVideo);
-        showShareElement();
-        setResultMedia(resultUrl, "video");
         resultType = "video";
+        showShareElement();
         showBlockBtnsElement();
-        handleUploadPresignedS3(blobVideo);
+        let fullUrl = await handleUploadPresignedS3(blobVideo);
+        setResultMedia(getUrlRaw(fullUrl), "video");
         // downloadBlob(blobVideo, containerType === "video/mp4" ? `rec_${getTimestamp()}.mp4` : `rec_${getTimestamp()}.webm`);
       }
-      function receiveImageBlob(blobImage) {
+      async function receiveImageBlob(blobImage) {
         console.log(`receive image: ${blobImage}`);
         window.unityInstance.SendMessage("Control", "ShowButton");
         resultUrl = getURLFromBlob(blobImage);
-        showShareElement();
-        setResultMedia(resultUrl, "image");
         resultType = "image";
         showBlockBtnsElement();
-        handleUploadPresignedS3(blobImage);
+        showShareElement();
+        let fullUrl = await handleUploadPresignedS3(blobImage);
+        setResultMedia(getUrlRaw(fullUrl), "image");
         // downloadBlob(blobImage, `screenshot_${getTimestamp()}.png`);
       }
     </script>

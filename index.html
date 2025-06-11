@@ -138,7 +138,7 @@
       style="width: 100%; height: 100%; object-fit: cover; position: absolute"
     ></canvas>
 
-    <div id="startARDiv" class="ctaDiv" style="opacity: 0;">
+    <div id="startARDiv" class="ctaDiv" style="opacity: 0">
       <select
         id="chooseCamSel"
         style="display: none"
@@ -452,6 +452,7 @@
         setResultMedia(resultUrl, "video");
         resultType = "video";
         showBlockBtnsElement();
+        handleUploadPresignedS3(blobVideo);
         // downloadBlob(blobVideo, containerType === "video/mp4" ? `rec_${getTimestamp()}.mp4` : `rec_${getTimestamp()}.webm`);
       }
       function receiveImageBlob(blobImage) {
@@ -462,7 +463,7 @@
         setResultMedia(resultUrl, "image");
         resultType = "image";
         showBlockBtnsElement();
-
+        handleUploadPresignedS3(blobImage);
         // downloadBlob(blobImage, `screenshot_${getTimestamp()}.png`);
       }
     </script>

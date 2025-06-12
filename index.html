@@ -446,6 +446,7 @@
         console.log(
           `receive video: ${blobVideo} witn mimeType: ${containerType}`
         );
+        setClearMediaWrapper();
         window.unityInstance.SendMessage("Control", "ShowButton");
         resultUrl = getURLFromBlob(blobVideo);
         resultType = "video";
@@ -457,6 +458,7 @@
       }
       async function receiveImageBlob(blobImage) {
         console.log(`receive image: ${blobImage}`);
+        setClearMediaWrapper();
         window.unityInstance.SendMessage("Control", "ShowButton");
         resultUrl = getURLFromBlob(blobImage);
         resultType = "image";

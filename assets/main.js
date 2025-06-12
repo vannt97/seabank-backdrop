@@ -146,6 +146,13 @@ function setResultMedia(url, type) {
   }
 }
 
+function setClearMediaWrapper() {
+  let element = findBgWrapperElement();
+  if (element) {
+    element.innerHTML = "";
+  }
+}
+
 function getURLFromBlob(blob) {
   return URL.createObjectURL(blob); // Tạo đường dẫn tạm
 }
@@ -279,8 +286,8 @@ function checkBrowser() {
 function handleRedirectToBrowser() {
   let current_url = new window.URL(window.location.href);
   let params = current_url.search;
-  window.location = `intent:${window.location.origin}${params}#Intent;end`;
-  window.location.href = `x-safari-${window.location.origin}${params}`;
+  window.location = `intent:${window.location.href}#Intent;end`;
+  window.location.href = `x-safari-${window.location.href}`;
 }
 
 function redirectToBrowserFromZalo() {

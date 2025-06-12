@@ -135,8 +135,9 @@ function setResultMedia(url, type) {
     return `<div id="result-wrapper" style="aspect-ratio: ${window.innerWidth}/${window.innerHeight}">${content}</div>`;
   };
   if (type == "video") {
-    element.innerHTML = renderContent(`<video id="result-video" controls>
-    <source src="${url}" type="video/mp4">
+    element.innerHTML =
+      renderContent(`<video id="result-video" preload="metadata" muted playsInline controls >
+    <source src="${url}#t=0.1" type="video/mp4">
   </video>`);
   }
   if (type == "image") {

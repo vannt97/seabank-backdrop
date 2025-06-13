@@ -240,12 +240,20 @@
     }
     //Set Facing Mode here ('environment', 'user', '')
     window.unityFacingMode = "environment";
+    // window.WEBCAM_SETTINGS = {
+    //   video: {
+    //     facingMode: unityFacingMode,
+    //   },
+    //   audio: false,
+    // };
     window.WEBCAM_SETTINGS = {
-      video: {
-        facingMode: unityFacingMode,
-      },
-      audio: false,
-    };
+        video: {
+          facingMode: { ideal: window.unityFacingMode },
+          width: { ideal: 1920, max: 1920 },
+          height: { ideal: 1080, max: 1080 }
+        },
+        audio: false,
+      };
     window.requestingForPermissions = false;
     async function RequestWebcam() {
       window.requestingForPermissions = true;

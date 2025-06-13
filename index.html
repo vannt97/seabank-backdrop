@@ -8,10 +8,10 @@
   <title>Trải nghiệm kỷ nguyên số với Thẻ SeABiz Ultra Cash</title>
   <meta name="description" content="Dấu ấn công nghệ tương tác ảo với Thẻ ghi nợ cho Khách hàng tổ chức của SeABank" />
   <meta property="og:image" content="/assets/images/backdrop.png" />
-  <script src="seaBankExtra.js?v=1"></script>
-  <link rel="stylesheet" href="TemplateData/style.css?v=1" />
-  <link rel="stylesheet" href="assets/font.css?v=1" />
-  <link rel="stylesheet" href="assets/main.css?v=1" />
+  <script src="seaBankExtra.js?v=2"></script>
+  <link rel="stylesheet" href="TemplateData/style.css?v=2" />
+  <link rel="stylesheet" href="assets/font.css?v=2" />
+  <link rel="stylesheet" href="assets/main.css?v=2" />
   <style>
     html {
       height: -webkit-fill-available;
@@ -178,11 +178,12 @@
     <canvas id="unity-canvas" style="width: 100%; height: 100%; background: #0000; z-index: -99"></canvas>
     <canvas id="video-canvas"></canvas>
   </div>
-  <script src="arcamera.js?v=1" type="text/javascript"></script>
-  <script src="itracker.js?v=1" type="text/javascript"></script>
-  <script src="assets/main.js?v=1" type="text/javascript"></script>
-  <script src="Build/Builds.loader.js?v=1"></script>
+  <script src="arcamera.js?v=2" type="text/javascript"></script>
+  <script src="itracker.js?v=2" type="text/javascript"></script>
+  <script src="assets/main.js?v=2" type="text/javascript"></script>
+  <script src="Build/Builds.loader.js?v=2"></script>
   <script>
+    
     var initialize = async () => {
       var unityCanvas = document.querySelector("#unity-canvas");
       var videoCanvas = document.querySelector("#video-canvas");
@@ -203,7 +204,13 @@
       await LoadWebcams();
       document.getElementById("startARButton").style.display = "block";
     };
-    initialize();
+    //await initWebcamSettings();
+    //initialize();
+    async function main() {
+        await initWebcamSettings();
+        initialize();
+    }
+    main();
     var container = document.querySelector("#unity-container");
     var canvas = document.querySelector("#unity-canvas");
     var loadingBar = document.querySelector("#unity-loading-bar");
@@ -239,6 +246,89 @@
       });
     }
     //Set Facing Mode here ('environment', 'user', '')
+    function checkDevicePerformance() {
+    return new Promise((resolve) => {
+        const blob = new Blob(
+            [
+                `let time = performance.now();
+                 let iterations = 0;
+                 while(true){
+                      iterations++;
+                      let now = performance.now();
+                      if(now - time > 100){
+                          postMessage(iterations);
+                          time = performance.now();
+                          iterations = 0;
+                      }
+                 }`
+            ],
+            { type: "text/javascript" }
+        );
+
+        function getMobileOperatingSystem() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/windows phone/i.test(userAgent)) return "Windows Phone";
+            if (/android/i.test(userAgent)) return "Android";
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) return "iOS";
+            return "unknown";
+        }
+
+        const processWorker = new Worker(window.URL.createObjectURL(blob));
+        const performanceData = [];
+        let count = 0;
+
+        processWorker.onmessage = (e) => {
+            performanceData.push(+e.data);
+            if (count < 1) {
+                setTimeout(() => {
+                    const max = Math.max(...performanceData);
+                    const os = getMobileOperatingSystem();
+
+                    let passed = false;
+
+                    if (os === "iOS" && max >= 1200000) {
+                        passed = true;
+                    } else if (os === "Android" && max >= 220000) {
+                        passed = true;
+                    } else if (os === "unknown" && max >= 500000) {
+                        passed = true;
+                    }
+
+                    processWorker.terminate();
+                    resolve(passed);
+                }, 1000);
+                count++;
+            }
+        };
+    });
+}
+
+async function initWebcamSettings() {
+    window.unityFacingMode = "environment";
+    const isHighPerformance = await checkDevicePerformance();
+
+    if (isHighPerformance) {
+      //alert("mạnh");
+        window.WEBCAM_SETTINGS = {
+            video: {
+                facingMode: { ideal: window.unityFacingMode },
+                width: { ideal: 1920, max: 1920 },
+                height: { ideal: 1080, max: 1080 }
+            },
+            audio: false,
+        };
+    } else {
+      //alert("yếu");
+        window.WEBCAM_SETTINGS = {
+          video: {
+            facingMode: unityFacingMode,
+          },
+          audio: false,
+        };
+    }
+}
+
+/*
     window.unityFacingMode = "environment";
     // window.WEBCAM_SETTINGS = {
     //   video: {
@@ -254,6 +344,7 @@
         },
         audio: false,
       };
+      */
     window.requestingForPermissions = false;
     async function RequestWebcam() {
       window.requestingForPermissions = true;

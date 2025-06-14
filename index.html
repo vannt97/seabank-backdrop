@@ -8,10 +8,10 @@
   <title>Trải nghiệm kỷ nguyên số với Thẻ SeABiz Ultra Cash</title>
   <meta name="description" content="Dấu ấn công nghệ tương tác ảo với Thẻ ghi nợ cho Khách hàng tổ chức của SeABank" />
   <meta property="og:image" content="/assets/images/backdrop.png" />
-  <script src="seaBankExtra.js?v=2"></script>
-  <link rel="stylesheet" href="TemplateData/style.css?v=2" />
-  <link rel="stylesheet" href="assets/font.css?v=2" />
-  <link rel="stylesheet" href="assets/main.css?v=2" />
+  <script src="seaBankExtra.js?v=5"></script>
+  <link rel="stylesheet" href="TemplateData/style.css?v=5" />
+  <link rel="stylesheet" href="assets/font.css?v=5" />
+  <link rel="stylesheet" href="assets/main.css?v=5" />
   <style>
     html {
       height: -webkit-fill-available;
@@ -54,23 +54,23 @@
 
 <body>
   <!--IMAGETARGETS-->
-  <imagetarget id="SeaBank_backDrop" src="targets/SeaBank_backDrop.png"></imagetarget>
+  <imagetarget id="SeaBank_backDrop" src="targets/SeaBank_backDrop.png?v=5"></imagetarget>
 
   <div id="home">
-    <img class="bg-img" src="assets/images/bg.png" alt="" />
+    <img class="bg-img" src="assets/images/bg.png?v=5" alt="" />
     <div class="home-wrapper">
-      <img class="seabank-logo" src="assets/images/sea-bank-logo.png" alt="" />
-      <img class="main-img" src="assets/images/home-image-1.png" alt="" />
-      <img class="description-img" src="assets/images/home-image-2.png" alt="" />
-      <img onclick="StartAR()" class="experience-btn" src="assets/images/experience-btn.png" alt="" />
+      <img class="seabank-logo" src="assets/images/sea-bank-logo.png?v=5" alt="" />
+      <img class="main-img" src="assets/images/home-image-1.png?v=5" alt="" />
+      <img class="description-img" src="assets/images/home-image-2.png?v=5" alt="" />
+      <img onclick="StartAR()" class="experience-btn" src="assets/images/experience-btn.png?v=5" alt="" />
     </div>
   </div>
   <div id="loading">
-    <img class="bg-img" src="assets/images/bg.png" alt="" />
+    <img class="bg-img" src="assets/images/bg.png?v=5" alt="" />
     <div class="home-wrapper">
-      <img class="seabank-logo" src="assets/images/sea-bank-logo.png" alt="" />
-      <img class="main-img" src="assets/images/home-image-1.png" alt="" />
-      <img class="description-img" src="assets/images/home-image-2.png" alt="" />
+      <img class="seabank-logo" src="assets/images/sea-bank-logo.png?v=5" alt="" />
+      <img class="main-img" src="assets/images/home-image-1.png?v=5" alt="" />
+      <img class="description-img" src="assets/images/home-image-2.png?v=5" alt="" />
       <div id="unity-loading-bar">
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
@@ -79,11 +79,11 @@
     </div>
   </div>
   <div id="error">
-    <img class="bg-img" src="assets/images/bg.png" alt="" />
+    <img class="bg-img" src="assets/images/bg.png?v=5" alt="" />
     <div class="home-wrapper">
-      <img class="seabank-logo" src="assets/images/sea-bank-logo.png" alt="" />
-      <img class="main-img" src="assets/images/home-image-1.png" alt="" />
-      <img class="description-img" src="assets/images/home-image-2.png" alt="" />
+      <img class="seabank-logo" src="assets/images/sea-bank-logo.png?v=5" alt="" />
+      <img class="main-img" src="assets/images/home-image-1.png?v=5" alt="" />
+      <img class="description-img" src="assets/images/home-image-2.png?v=5" alt="" />
     </div>
     <div class="popup-wrapper">
       <div class="outer"></div>
@@ -96,7 +96,7 @@
     </div>
   </div>
   <div id="share">
-    <img class="bg-img" src="assets/images/bg.png" alt="" />
+    <img class="bg-img" src="assets/images/bg.png?v=5" alt="" />
     <div class="home-wrapper">
       <div class="share-title">
         <p>Chia sẻ ngay để có cơ hội</p>
@@ -178,10 +178,10 @@
     <canvas id="unity-canvas" style="width: 100%; height: 100%; background: #0000; z-index: -99"></canvas>
     <canvas id="video-canvas"></canvas>
   </div>
-  <script src="arcamera.js?v=2" type="text/javascript"></script>
-  <script src="itracker.js?v=2" type="text/javascript"></script>
-  <script src="assets/main.js?v=2" type="text/javascript"></script>
-  <script src="Build/Builds.loader.js?v=2"></script>
+  <script src="arcamera.js?v=5" type="text/javascript"></script>
+  <script src="itracker.js?v=5" type="text/javascript"></script>
+  <script src="assets/main.js?v=5" type="text/javascript"></script>
+  <script src="Build/Builds.loader.js?v=5"></script>
   <script>
     
     var initialize = async () => {
@@ -225,13 +225,13 @@
       createUnityInstance(
         document.querySelector("#unity-canvas"),
         {
-          dataUrl: "Build/Builds.data.unityweb",
-          frameworkUrl: "Build/Builds.framework.js.unityweb",
-          codeUrl: "Build/Builds.wasm.unityweb",
-          streamingAssetsUrl: "StreamingAssets",
+          dataUrl: "Build/Builds.data.unityweb?v=5",
+          frameworkUrl: "Build/Builds.framework.js.unityweb?v=5",
+          codeUrl: "Build/Builds.wasm.unityweb?v=5",
+          streamingAssetsUrl: "StreamingAssets?v=5",
           companyName: "DefaultCompany",
-          productName: "vnpt",
-          productVersion: "0.1",
+          productName: "backdrop",
+          productVersion: "0.4",
           //webglContextAttributes: { "preserveDrawingBuffer": true },
           // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
           // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.

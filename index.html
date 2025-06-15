@@ -1,147 +1,207 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport"
-    content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=yes" />
-  <title>Trải nghiệm kỷ nguyên số với Thẻ SeABiz Ultra Cash</title>
-  <meta name="description" content="Dấu ấn công nghệ tương tác ảo với Thẻ ghi nợ cho Khách hàng tổ chức của SeABank" />
-  <meta property="og:image" content="/assets/images/backdrop.png" />
-  <script src="seaBankExtra.js?v=6"></script>
-  <link rel="stylesheet" href="TemplateData/style.css?v=6" />
-  <link rel="stylesheet" href="assets/font.css?v=6" />
-  <link rel="stylesheet" href="assets/main.css?v=6" />
-  <style>
-    html {
-      height: -webkit-fill-available;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      min-height: -webkit-fill-available;
-      width: 100vw;
-      overflow: hidden;
-    }
-
-    .ctaDiv {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      background: #fffa;
-      z-index: 99;
-    }
-  </style>
-  <script>
-    window.alert = function () {
-      window.location.reload();
-    };
-    window.addEventListener("pageshow", function (event) {
-      if (event.persisted) {
-        window.location.reload();
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=yes"
+    />
+    <title>Trải nghiệm kỷ nguyên số với Thẻ SeABiz Ultra Cash</title>
+    <meta
+      name="description"
+      content="Dấu ấn công nghệ tương tác ảo với Thẻ ghi nợ cho Khách hàng tổ chức của SeABank"
+    />
+    <meta property="og:image" content="/assets/images/backdrop.png" />
+    <script src="seaBankExtra.js?v=6"></script>
+    <link rel="stylesheet" href="TemplateData/style.css?v=6" />
+    <link rel="stylesheet" href="assets/font.css?v=6" />
+    <link rel="stylesheet" href="assets/main.css?v=6" />
+    <style>
+      html {
+        height: -webkit-fill-available;
       }
-    });
-  </script>
-</head>
 
-<body>
-  <!--IMAGETARGETS-->
-  <imagetarget id="SeaBank_backDrop" src="targets/SeaBank_backDrop.png?v=6"></imagetarget>
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        width: 100vw;
+        overflow: hidden;
+      }
 
-  <div id="home">
-    <img class="bg-img" src="assets/images/bg.png?v=6" alt="" />
-    <div class="home-wrapper">
-      <img class="seabank-logo" src="assets/images/sea-bank-logo.png?v=6" alt="" />
-      <img class="main-img" src="assets/images/home-image-1.png?v=6" alt="" />
-      <img class="description-img" src="assets/images/home-image-2.png?v=6" alt="" />
-      <img onclick="StartAR()" class="experience-btn" src="assets/images/experience-btn.png?v=6" alt="" />
+      .ctaDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: #fffa;
+        z-index: 99;
+      }
+    </style>
+    <script>
+      window.alert = function () {
+        window.location.reload();
+      };
+      window.addEventListener("pageshow", function (event) {
+        if (event.persisted) {
+          window.location.reload();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <!--IMAGETARGETS-->
+    <imagetarget
+      id="SeaBank_backDrop"
+      src="targets/SeaBank_backDrop.png?v=6"
+    ></imagetarget>
+
+    <div id="home">
+      <img class="bg-img" src="assets/images/bg.png?v=6" alt="" />
+      <div class="home-wrapper">
+        <img
+          class="seabank-logo"
+          src="assets/images/sea-bank-logo.png?v=6"
+          alt=""
+        />
+        <img class="main-img" src="assets/images/home-image-1.png?v=6" alt="" />
+        <img
+          class="description-img"
+          src="assets/images/home-image-2.png?v=6"
+          alt=""
+        />
+        <img
+          onclick="StartAR()"
+          class="experience-btn"
+          src="assets/images/experience-btn.png?v=6"
+          alt=""
+        />
+      </div>
     </div>
-  </div>
-  <div id="loading">
-    <img class="bg-img" src="assets/images/bg.png?v=6" alt="" />
-    <div class="home-wrapper">
-      <img class="seabank-logo" src="assets/images/sea-bank-logo.png?v=6" alt="" />
-      <img class="main-img" src="assets/images/home-image-1.png?v=6" alt="" />
-      <img class="description-img" src="assets/images/home-image-2.png?v=6" alt="" />
-      <div id="unity-loading-bar">
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+    <div id="loading">
+      <img class="bg-img" src="assets/images/bg.png?v=6" alt="" />
+      <div class="home-wrapper">
+        <img
+          class="seabank-logo"
+          src="assets/images/sea-bank-logo.png?v=6"
+          alt=""
+        />
+        <img class="main-img" src="assets/images/home-image-1.png?v=6" alt="" />
+        <img
+          class="description-img"
+          src="assets/images/home-image-2.png?v=6"
+          alt=""
+        />
+        <div id="unity-loading-bar">
+          <div id="unity-progress-bar-empty">
+            <div id="unity-progress-bar-full"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div id="error">
-    <img class="bg-img" src="assets/images/bg.png?v=6" alt="" />
-    <div class="home-wrapper">
-      <img class="seabank-logo" src="assets/images/sea-bank-logo.png?v=6" alt="" />
-      <img class="main-img" src="assets/images/home-image-1.png?v=6" alt="" />
-      <img class="description-img" src="assets/images/home-image-2.png?v=6" alt="" />
-    </div>
-    <div class="popup-wrapper">
-      <div class="outer"></div>
-      <div class="inner">
-        <p>
-          Camera chưa được bật, vui lòng load lại trang và cho phép truy cập
-          quyền camera
-        </p>
+    <div id="error">
+      <img class="bg-img" src="assets/images/bg.png?v=6" alt="" />
+      <div class="home-wrapper">
+        <img
+          class="seabank-logo"
+          src="assets/images/sea-bank-logo.png?v=6"
+          alt=""
+        />
+        <img class="main-img" src="assets/images/home-image-1.png?v=6" alt="" />
+        <img
+          class="description-img"
+          src="assets/images/home-image-2.png?v=6"
+          alt=""
+        />
+      </div>
+      <div class="popup-wrapper">
+        <div class="outer"></div>
+        <div class="inner">
+          <p>
+            Camera chưa được bật, vui lòng load lại trang và cho phép truy cập
+            quyền camera
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-  <div id="share">
-    <img class="bg-img" src="assets/images/bg.png?v=6" alt="" />
-    <div class="home-wrapper">
-      <div class="share-title">
-        <p>Chia sẻ ngay để có cơ hội</p>
-        <p>nhận nhiều phần quà hấp dẫn!</p>
+    <div id="share">
+      <img class="bg-img" src="assets/images/bg.png?v=6" alt="" />
+      <div class="home-wrapper">
+        <div class="share-title">
+          <p>Chia sẻ ngay để có cơ hội</p>
+          <p>nhận nhiều phần quà hấp dẫn!</p>
+        </div>
+        <div class="bg-wrapper"></div>
+
+        <div class="block-btns-wrapper"></div>
       </div>
-      <div class="bg-wrapper"></div>
-
-      <div class="block-btns-wrapper"></div>
     </div>
-  </div>
-  <video id="webcam-video" muted autoplay playsinline style="width: 1px; position: absolute"></video>
-  <!-- <video id="webcam-video" muted autoplay playsinline style="width:100%; height:100%; object-fit:cover; position:absolute"></video> -->
-  <canvas id="video-canvas" style="width: 100%; height: 100%; object-fit: cover; position: absolute"></canvas>
+    <video
+      id="webcam-video"
+      muted
+      autoplay
+      playsinline
+      style="width: 1px; position: absolute"
+    ></video>
+    <!-- <video id="webcam-video" muted autoplay playsinline style="width:100%; height:100%; object-fit:cover; position:absolute"></video> -->
+    <canvas
+      id="video-canvas"
+      style="width: 100%; height: 100%; object-fit: cover; position: absolute"
+    ></canvas>
 
-  <div id="startARDiv" class="ctaDiv" style="opacity: 0">
-    <select id="chooseCamSel" style="display: none" onchange="SelectCam()"></select>
-    <p style="text-align: center; width: 60vw">
-      This augmented reality experience requires access to your device's
-      camera
-    </p>
-    <button id="startARButton" onclick="StartAR()" style="display: none">
-      ALLOW ACCESS
-    </button>
-  </div>
-  <div id="screenshotDiv" style="display: none" class="ctaDiv">
-    <div style="
+    <div id="startARDiv" class="ctaDiv" style="opacity: 0">
+      <select
+        id="chooseCamSel"
+        style="display: none"
+        onchange="SelectCam()"
+      ></select>
+      <p style="text-align: center; width: 60vw">
+        This augmented reality experience requires access to your device's
+        camera
+      </p>
+      <button id="startARButton" onclick="StartAR()" style="display: none">
+        ALLOW ACCESS
+      </button>
+    </div>
+    <div id="screenshotDiv" style="display: none" class="ctaDiv">
+      <div
+        style="
           position: relative;
           background-color: white;
           padding: 10px;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3),
             0 6px 20px 0 rgba(0, 0, 0, 0.25);
-        ">
-      <img id="screenshotImg" src="" alt="screenshot" style="width: 80vw; height: 80vh" />
-      <button onclick="document.getElementById('screenshotDiv').style.display = 'none';" style="
+        "
+      >
+        <img
+          id="screenshotImg"
+          src=""
+          alt="screenshot"
+          style="width: 80vw; height: 80vh"
+        />
+        <button
+          onclick="document.getElementById('screenshotDiv').style.display = 'none';"
+          style="
             position: absolute;
             transform: translateY(-100%);
             right: 0;
             top: 0;
-          ">
-        Close
-      </button>
+          "
+        >
+          Close
+        </button>
+      </div>
     </div>
-  </div>
-  <div id="confirmUrlDiv" style="display: none" class="ctaDiv">
-    <div style="
+    <div id="confirmUrlDiv" style="display: none" class="ctaDiv">
+      <div
+        style="
           position: relative;
           background-color: white;
           padding: 10px;
@@ -151,106 +211,118 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-        ">
-      <p id="confirmUrlText" style="
+        "
+      >
+        <p
+          id="confirmUrlText"
+          style="
             text-align: center;
             width: 80%;
             overflow: hidden;
             text-overflow: ellipsis;
-          ">
-        Are you sure you want to visit url.com?
-      </p>
-      <div>
-        <button
-          onclick="window.open(newUrlString, '_blank').focus(); document.getElementById('confirmUrlDiv').style.display = 'none'">
-          VISIT SITE
-        </button>
-        <button onclick="document.getElementById('confirmUrlDiv').style.display = 'none'">
-          GO BACK
-        </button>
+          "
+        >
+          Are you sure you want to visit url.com?
+        </p>
+        <div>
+          <button
+            onclick="window.open(newUrlString, '_blank').focus(); document.getElementById('confirmUrlDiv').style.display = 'none'"
+          >
+            VISIT SITE
+          </button>
+          <button
+            onclick="document.getElementById('confirmUrlDiv').style.display = 'none'"
+          >
+            GO BACK
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-  <div id="errorDiv" class="ctaDiv" style="display: none; background: #aaa">
-    <p id="errorText" style="text-align: center; width: 60vw; color: white"></p>
-  </div>
-  <div id="unity-container" class="unity-mobile">
-    <canvas id="unity-canvas" style="width: 100%; height: 100%; background: #0000; z-index: -99"></canvas>
-    <canvas id="video-canvas"></canvas>
-  </div>
-  <script src="arcamera.js?v=6" type="text/javascript"></script>
-  <script src="itracker.js?v=6" type="text/javascript"></script>
-  <script src="assets/main.js?v=6" type="text/javascript"></script>
-  <script src="Build/Builds.loader.js?v=6"></script>
-  <script>
-    
-    var initialize = async () => {
-      var unityCanvas = document.querySelector("#unity-canvas");
-      var videoCanvas = document.querySelector("#video-canvas");
-      window.arCamera = new ARCamera(unityCanvas, videoCanvas);
-      window.iTracker = new ImageTracker(arCamera);
-      try {
-        await window.iTracker.initialize();
-        console.log("ImageTracker initialized!");
-      } catch {
-        console.error(
-          "Failed to initialize ImageTracker. Are you missing opencv.js? " +
-          error
-        );
-        ShowError("Failed to initialize the experience.");
-        return;
-      }
+    <div id="errorDiv" class="ctaDiv" style="display: none; background: #aaa">
+      <p
+        id="errorText"
+        style="text-align: center; width: 60vw; color: white"
+      ></p>
+    </div>
+    <div id="unity-container" class="unity-mobile">
+      <canvas
+        id="unity-canvas"
+        style="width: 100%; height: 100%; background: #0000; z-index: -99"
+      ></canvas>
+      <canvas id="video-canvas"></canvas>
+    </div>
+    <script src="arcamera.js?v=6" type="text/javascript"></script>
+    <script src="itracker.js?v=6" type="text/javascript"></script>
+    <script src="assets/main.js?v=6" type="text/javascript"></script>
+    <script src="Build/Builds.loader.js?v=6"></script>
+    <script>
+      var initialize = async () => {
+        var unityCanvas = document.querySelector("#unity-canvas");
+        var videoCanvas = document.querySelector("#video-canvas");
+        window.arCamera = new ARCamera(unityCanvas, videoCanvas);
+        window.iTracker = new ImageTracker(arCamera);
+        try {
+          await window.iTracker.initialize();
+          console.log("ImageTracker initialized!");
+        } catch {
+          console.error(
+            "Failed to initialize ImageTracker. Are you missing opencv.js? " +
+              error
+          );
+          ShowError("Failed to initialize the experience.");
+          return;
+        }
 
-      await LoadWebcams();
-      document.getElementById("startARButton").style.display = "block";
-    };
-    //await initWebcamSettings();
-    //initialize();
-    async function main() {
+        await LoadWebcams();
+        document.getElementById("startARButton").style.display = "block";
+      };
+      //await initWebcamSettings();
+      //initialize();
+      async function main() {
         await initWebcamSettings();
         initialize();
-    }
-    main();
-    var container = document.querySelector("#unity-container");
-    var canvas = document.querySelector("#unity-canvas");
-    var loadingBar = document.querySelector("#unity-loading-bar");
-    var progressBarFull = document.querySelector("#unity-progress-bar-full");
-    function StartAR() {
-      canvas.style.width = window.innerWidth + "px";
-      canvas.style.height = window.innerHeight + "px";
+      }
+      main();
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      function StartAR() {
+        canvas.style.width = window.innerWidth + "px";
+        canvas.style.height = window.innerHeight + "px";
 
-      // document.getElementById("startARDiv").style.display = "none";
-      hiddenHome();
-      showSceneLoading();
-      createUnityInstance(
-        document.querySelector("#unity-canvas"),
-        {
-          dataUrl: "Build/Builds.data.unityweb?v=6",
-          frameworkUrl: "Build/Builds.framework.js.unityweb?v=6",
-          codeUrl: "Build/Builds.wasm.unityweb?v=6",
-          streamingAssetsUrl: "StreamingAssets?v=6",
-          companyName: "DefaultCompany",
-          productName: "backdrop",
-          productVersion: "0.4",
-          //webglContextAttributes: { "preserveDrawingBuffer": true },
-          // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-          // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-        },
-        (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }
-      ).then((unityInstance) => {
-        window.unityInstance = unityInstance;
-        RequestWebcam();
-        //   hiddenSceneLoading();
-      });
-    }
-    //Set Facing Mode here ('environment', 'user', '')
-    function checkDevicePerformance() {
-    return new Promise((resolve) => {
-        const blob = new Blob(
+        // document.getElementById("startARDiv").style.display = "none";
+        hiddenHome();
+        showSceneLoading();
+        createUnityInstance(
+          document.querySelector("#unity-canvas"),
+          {
+            dataUrl: "Build/Builds.data.unityweb?v=6",
+            frameworkUrl: "Build/Builds.framework.js.unityweb?v=6",
+            codeUrl: "Build/Builds.wasm.unityweb?v=6",
+            streamingAssetsUrl: "StreamingAssets?v=6",
+            companyName: "DefaultCompany",
+            productName: "backdrop",
+            productVersion: "0.4",
+            //webglContextAttributes: { "preserveDrawingBuffer": true },
+            // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+            // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+          },
+          (progress) => {
+            progressBarFull.style.width = 100 * progress + "%";
+          }
+        ).then((unityInstance) => {
+          window.unityInstance = unityInstance;
+          RequestWebcam();
+          //   hiddenSceneLoading();
+        });
+      }
+      //Set Facing Mode here ('environment', 'user', '')
+      function checkDevicePerformance() {
+        return new Promise((resolve) => {
+          const blob = new Blob(
             [
-                `let time = performance.now();
+              `let time = performance.now();
                  let iterations = 0;
                  while(true){
                       iterations++;
@@ -260,75 +332,77 @@
                           time = performance.now();
                           iterations = 0;
                       }
-                 }`
+                 }`,
             ],
             { type: "text/javascript" }
-        );
+          );
 
-        function getMobileOperatingSystem() {
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+          function getMobileOperatingSystem() {
+            const userAgent =
+              navigator.userAgent || navigator.vendor || window.opera;
             if (/windows phone/i.test(userAgent)) return "Windows Phone";
             if (/android/i.test(userAgent)) return "Android";
-            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) return "iOS";
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream)
+              return "iOS";
             return "unknown";
-        }
+          }
 
-        const processWorker = new Worker(window.URL.createObjectURL(blob));
-        const performanceData = [];
-        let count = 0;
+          const processWorker = new Worker(window.URL.createObjectURL(blob));
+          const performanceData = [];
+          let count = 0;
 
-        processWorker.onmessage = (e) => {
+          processWorker.onmessage = (e) => {
             performanceData.push(+e.data);
             if (count < 1) {
-                setTimeout(() => {
-                    const max = Math.max(...performanceData);
-                    const os = getMobileOperatingSystem();
+              setTimeout(() => {
+                const max = Math.max(...performanceData);
+                const os = getMobileOperatingSystem();
 
-                    let passed = false;
+                let passed = false;
 
-                    if (os === "iOS" && max >= 1200000) {
-                        passed = true;
-                    } else if (os === "Android" && max >= 220000) {
-                        passed = true;
-                    } else if (os === "unknown" && max >= 500000) {
-                        passed = true;
-                    }
+                if (os === "iOS" && max >= 1200000) {
+                  passed = true;
+                } else if (os === "Android" && max >= 220000) {
+                  passed = true;
+                } else if (os === "unknown" && max >= 500000) {
+                  passed = true;
+                }
 
-                    processWorker.terminate();
-                    resolve(passed);
-                }, 1000);
-                count++;
+                processWorker.terminate();
+                resolve(passed);
+              }, 1000);
+              count++;
             }
-        };
-    });
-}
+          };
+        });
+      }
 
-async function initWebcamSettings() {
-    window.unityFacingMode = "environment";
-    const isHighPerformance = await checkDevicePerformance();
+      async function initWebcamSettings() {
+        window.unityFacingMode = "environment";
+        const isHighPerformance = await checkDevicePerformance();
 
-    if (isHighPerformance) {
-      //alert("mạnh");
-        window.WEBCAM_SETTINGS = {
+        if (isHighPerformance) {
+          //alert("mạnh");
+          window.WEBCAM_SETTINGS = {
             video: {
-                facingMode: { ideal: window.unityFacingMode },
-                width: { ideal: 1920, max: 1920 },
-                height: { ideal: 1080, max: 1080 }
+              facingMode: { ideal: window.unityFacingMode },
+              width: { ideal: 1920, max: 1920 },
+              height: { ideal: 1080, max: 1080 },
             },
             audio: false,
-        };
-    } else {
-      //alert("yếu");
-        window.WEBCAM_SETTINGS = {
-          video: {
-            facingMode: unityFacingMode,
-          },
-          audio: false,
-        };
-    }
-}
+          };
+        } else {
+          //alert("yếu");
+          window.WEBCAM_SETTINGS = {
+            video: {
+              facingMode: unityFacingMode,
+            },
+            audio: false,
+          };
+        }
+      }
 
-/*
+      /*
     window.unityFacingMode = "environment";
     // window.WEBCAM_SETTINGS = {
     //   video: {
@@ -345,174 +419,177 @@ async function initWebcamSettings() {
         audio: false,
       };
       */
-    window.requestingForPermissions = false;
-    async function RequestWebcam() {
-      window.requestingForPermissions = true;
-      try {
+      window.requestingForPermissions = false;
+      async function RequestWebcam() {
+        window.requestingForPermissions = true;
+        try {
+          window.webcamStream = await navigator.mediaDevices.getUserMedia(
+            window.WEBCAM_SETTINGS
+          );
+          console.log("Webcam access granted");
+          requestingForPermissions = false;
+        } catch (err) {
+          //user denied camera permission - show error panel
+          console.error("getUserMedia error - ", err);
+          //   ShowError(
+          //     "Failed to start the experience. Camera permission was denied"
+          //   );
+          showErrorElement();
+          window.requestingForPermissions = false;
+        }
+      }
+      async function StartWebcam() {
+        console.log("StartWebcam");
+        while (window.requestingForPermissions) {
+          // Wait until requestingForPermissions becomes true.
+          console.log("Waiting for permissions...");
+          await new Promise((resolve) => setTimeout(resolve, 100)); // Adjust the delay time as needed.
+        }
+        hiddenSceneLoading();
+        console.log("Got Permissions");
+        if (window.webcamStream) {
+          const video = document.querySelector("#webcam-video");
+          video.srcObject = webcamStream;
+          try {
+            await arCamera.startWebcam(video);
+            console.log("Webcam started successfully");
+            window.unityInstance.SendMessage(
+              "ARCamera",
+              "OnStartWebcamSuccess"
+            );
+          } catch (err) {
+            console.error("Webcam failed to start - ", err);
+            window.unityInstance.SendMessage("ARCamera", "OnStartWebcamFail");
+          }
+        } else {
+          console.error("Webcam failed to start - permission not yet granted");
+          window.unityInstance.SendMessage("ARCamera", "OnStartWebcamFail");
+        }
+      }
+      async function LoadWebcams() {
+        let camDevices = [];
+        // let backCams = [];
+        let devices = await navigator.mediaDevices.enumerateDevices();
+        var ctr = 0;
+        devices.forEach((mediaDevice) => {
+          if (mediaDevice.kind === "videoinput") {
+            if (
+              window.unityFacingMode == "environment" &&
+              !mediaDevice.label.includes("facing front")
+            ) {
+              //back cam only
+              camDevices.push(mediaDevice);
+            } else if (
+              window.unityFacingMode == "user" &&
+              mediaDevice.label.includes("facing front")
+            ) {
+              //front cam only
+              camDevices.push(mediaDevice);
+            } else {
+              //back and front
+              camDevices.push(mediaDevice);
+            }
+
+            ctr++;
+          }
+        });
+        var select = document.getElementById("chooseCamSel");
+        select.style.display = "block";
+        var count = 0;
+        //reverse array because some Android phones can't distinguish front and back cams at first load
+        //and when this happens, most of the time, front cam goes first and back cam goes last
+        camDevices = camDevices.reverse();
+        camDevices.forEach((mediaDevice) => {
+          const option = document.createElement("option");
+          option.value = mediaDevice.deviceId;
+          let label = `Camera ${count}`;
+          if (mediaDevice.label) {
+            label = mediaDevice.label;
+          }
+          const textNode = document.createTextNode(label);
+          option.appendChild(textNode);
+          select.appendChild(option);
+          count++;
+        });
+        iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;
+      }
+      function SelectCam() {
+        var select = document.getElementById("chooseCamSel");
+        window.deviceId = select.value;
+        window.WEBCAM_SETTINGS.video["deviceId"] = deviceId;
+        //console.log(window.WEBCAM_SETTINGS);
+        iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;
+      }
+      async function FlipCam() {
+        arCamera.stopWebcam();
+        window.WEBCAM_SETTINGS.video.deviceId = "";
+        if (window.WEBCAM_SETTINGS.video.facingMode == "user") {
+          window.WEBCAM_SETTINGS.video.facingMode = "environment";
+          arCamera.setFlipped(false);
+        } else {
+          window.WEBCAM_SETTINGS.video.facingMode = "user";
+          arCamera.setFlipped(true);
+        }
         window.webcamStream = await navigator.mediaDevices.getUserMedia(
           window.WEBCAM_SETTINGS
         );
-        console.log("Webcam access granted");
-        requestingForPermissions = false;
-      } catch (err) {
-        //user denied camera permission - show error panel
-        console.error("getUserMedia error - ", err);
-        //   ShowError(
-        //     "Failed to start the experience. Camera permission was denied"
-        //   );
-        showErrorElement();
-        window.requestingForPermissions = false;
-      }
-    }
-    async function StartWebcam() {
-      console.log("StartWebcam");
-      while (window.requestingForPermissions) {
-        // Wait until requestingForPermissions becomes true.
-        console.log("Waiting for permissions...");
-        await new Promise((resolve) => setTimeout(resolve, 100)); // Adjust the delay time as needed.
-      }
-      hiddenSceneLoading();
-      console.log("Got Permissions");
-      if (window.webcamStream) {
         const video = document.querySelector("#webcam-video");
         video.srcObject = webcamStream;
-        try {
-          await arCamera.startWebcam(video);
-          console.log("Webcam started successfully");
-          window.unityInstance.SendMessage(
-            "ARCamera",
-            "OnStartWebcamSuccess"
-          );
-        } catch (err) {
-          console.error("Webcam failed to start - ", err);
-          window.unityInstance.SendMessage("ARCamera", "OnStartWebcamFail");
-        }
-      } else {
-        console.error("Webcam failed to start - permission not yet granted");
-        window.unityInstance.SendMessage("ARCamera", "OnStartWebcamFail");
+        await arCamera.startWebcam(video);
       }
-    }
-    async function LoadWebcams() {
-      let camDevices = [];
-      // let backCams = [];
-      let devices = await navigator.mediaDevices.enumerateDevices();
-      var ctr = 0;
-      devices.forEach((mediaDevice) => {
-        if (mediaDevice.kind === "videoinput") {
-          if (
-            window.unityFacingMode == "environment" &&
-            !mediaDevice.label.includes("facing front")
-          ) {
-            //back cam only
-            camDevices.push(mediaDevice);
-          } else if (
-            window.unityFacingMode == "user" &&
-            mediaDevice.label.includes("facing front")
-          ) {
-            //front cam only
-            camDevices.push(mediaDevice);
-          } else {
-            //back and front
-            camDevices.push(mediaDevice);
-          }
-
-          ctr++;
-        }
-      });
-      var select = document.getElementById("chooseCamSel");
-      select.style.display = "block";
-      var count = 0;
-      //reverse array because some Android phones can't distinguish front and back cams at first load
-      //and when this happens, most of the time, front cam goes first and back cam goes last
-      camDevices = camDevices.reverse();
-      camDevices.forEach((mediaDevice) => {
-        const option = document.createElement("option");
-        option.value = mediaDevice.deviceId;
-        let label = `Camera ${count}`;
-        if (mediaDevice.label) {
-          label = mediaDevice.label;
-        }
-        const textNode = document.createTextNode(label);
-        option.appendChild(textNode);
-        select.appendChild(option);
-        count++;
-      });
-      iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;
-    }
-    function SelectCam() {
-      var select = document.getElementById("chooseCamSel");
-      window.deviceId = select.value;
-      window.WEBCAM_SETTINGS.video["deviceId"] = deviceId;
-      //console.log(window.WEBCAM_SETTINGS);
-      iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;
-    }
-    async function FlipCam() {
-      arCamera.stopWebcam();
-      window.WEBCAM_SETTINGS.video.deviceId = "";
-      if (window.WEBCAM_SETTINGS.video.facingMode == "user") {
-        window.WEBCAM_SETTINGS.video.facingMode = "environment";
-        arCamera.setFlipped(false);
-      } else {
-        window.WEBCAM_SETTINGS.video.facingMode = "user";
-        arCamera.setFlipped(true);
+      function ShowError(error) {
+        document.getElementById("errorDiv").style.display = "flex";
+        document.getElementById("errorText").innerHTML = error;
       }
-      window.webcamStream = await navigator.mediaDevices.getUserMedia(
-        window.WEBCAM_SETTINGS
-      );
-      const video = document.querySelector("#webcam-video");
-      video.srcObject = webcamStream;
-      await arCamera.startWebcam(video);
-    }
-    function ShowError(error) {
-      document.getElementById("errorDiv").style.display = "flex";
-      document.getElementById("errorText").innerHTML = error;
-    }
-    function ShowScreenshot(dataUrl) {
-      document.getElementById("screenshotDiv").style.display = "flex";
-      document.getElementById("screenshotImg").src = dataUrl;
-      document.getElementById("screenshotImg").style.width = "80vw";
-      document.getElementById("screenshotImg").style.height =
-        (80 / window.innerWidth) * window.innerHeight + "vw";
-    }
-    function ShowConfirmUrl(url) {
-      document.getElementById("confirmUrlDiv").style.display = "flex";
-      window.newUrlString = url;
-      document.getElementById("confirmUrlText").innerText =
-        "Are you sure you want to visit " + url;
-    }
-    window.ITRACKER_GLOBALS = {
-      //place global settings here
-      INTERNAL_SMOOTHFACTOR_POS: 0.075,
-    };
-  </script>
-  <script>
-    async function receiveVideoBlob(blobVideo, containerType) {
-      console.log(
-        `receive video: ${blobVideo} witn mimeType: ${containerType}`
-      );
-      setClearMediaWrapper();
-      window.unityInstance.SendMessage("Control", "ShowButton");
-      resultUrl = getURLFromBlob(blobVideo);
-      resultType = "video";
-      showShareElement();
-      showBlockBtnsElement();
-      let fullUrl = await handleUploadPresignedS3(blobVideo);
-      setResultMedia(getUrlRaw(fullUrl), "video");
-      // downloadBlob(blobVideo, containerType === "video/mp4" ? `rec_${getTimestamp()}.mp4` : `rec_${getTimestamp()}.webm`);
-    }
-    async function receiveImageBlob(blobImage) {
-      console.log(`receive image: ${blobImage}`);
-      setClearMediaWrapper();
-      window.unityInstance.SendMessage("Control", "ShowButton");
-      resultUrl = getURLFromBlob(blobImage);
-      resultType = "image";
-      showBlockBtnsElement();
-      showShareElement();
-      let fullUrl = await handleUploadPresignedS3(blobImage);
-      setResultMedia(getUrlRaw(fullUrl), "image");
-      // downloadBlob(blobImage, `screenshot_${getTimestamp()}.png`);
-    }
-  </script>
-</body>
+      function ShowScreenshot(dataUrl) {
+        document.getElementById("screenshotDiv").style.display = "flex";
+        document.getElementById("screenshotImg").src = dataUrl;
+        document.getElementById("screenshotImg").style.width = "80vw";
+        document.getElementById("screenshotImg").style.height =
+          (80 / window.innerWidth) * window.innerHeight + "vw";
+      }
+      function ShowConfirmUrl(url) {
+        document.getElementById("confirmUrlDiv").style.display = "flex";
+        window.newUrlString = url;
+        document.getElementById("confirmUrlText").innerText =
+          "Are you sure you want to visit " + url;
+      }
+      window.ITRACKER_GLOBALS = {
+        //place global settings here
+        INTERNAL_SMOOTHFACTOR_POS: 0.075,
+      };
+    </script>
+    <script>
+      async function receiveVideoBlob(blobVideo, containerType) {
+        console.log(
+          `receive video: ${blobVideo} witn mimeType: ${containerType}`
+        );
+        setClearMediaWrapper();
+        window.unityInstance.SendMessage("Control", "ShowButton");
+        resultUrl = getURLFromBlob(blobVideo);
+        resultType = "video";
+        showShareElement();
+        showBlockBtnsElement();
+        let fullUrl = await handleUploadPresignedS3(blobVideo);
+        setResultMedia(getUrlRaw(fullUrl), "video");
+        // downloadBlob(blobVideo, containerType === "video/mp4" ? `rec_${getTimestamp()}.mp4` : `rec_${getTimestamp()}.webm`);
+      }
+      async function receiveImageBlob(blobImage) {
+        console.log(`receive image: ${blobImage}`);
+        setClearMediaWrapper();
+        window.unityInstance.SendMessage("Control", "ShowButton");
+        resultUrl = getURLFromBlob(blobImage);
+        resultType = "image";
+        showBlockBtnsElement();
+        showShareElement();
+        let fullUrl = await handleUploadPresignedS3(blobImage);
+        setResultMedia(getUrlRaw(fullUrl), "image");
+        // downloadBlob(blobImage, `screenshot_${getTimestamp()}.png`);
+      }
+    </script>
 
+    <script>
+      const APP_MODE = "production";
+    </script>
+  </body>
 </html>

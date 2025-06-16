@@ -322,3 +322,4 @@ function isFbBrowser() {
 }
 
 redirectToBrowserFromZalo();
+redirectToBrowserFromFB();

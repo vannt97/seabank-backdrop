@@ -591,5 +591,18 @@
     <script>
       const APP_MODE = "production";
     </script>
+
+    <script
+      src="https://js.sentry-cdn.com/6bc2e7c97189da1044c4aeb2624fdddc.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      window.onload = function () {
+        Sentry.onLoad(function () {
+          Sentry.init({});
+        });
+      };
+    </script>
   </body>
 </html>

@@ -1,9 +1,8 @@
 let API_URL = "https://seabank-uat.marvy-uat.xyz/api/";
 if ((APP_MODE = "production")) {
-  API_URL = "https://kynguyenhoantienmoi.com/api/";
+  API_URL = "https://kynguyenhoantienmoi.online/api/";
 }
-const S3_URL =
-  "https://s3.ap-southeast-1.amazonaws.com/octokit-assets/uploads/";
+
 let resultImageURL = null;
 let resultType = null;
 function findHomeElement() {
